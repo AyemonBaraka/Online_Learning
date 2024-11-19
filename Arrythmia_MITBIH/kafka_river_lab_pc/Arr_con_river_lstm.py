@@ -25,7 +25,7 @@ class MyLSTMModel(nn.Module):
         super(MyLSTMModel, self).__init__()
         self.hidden_size = hidden_size
         self.lstm = nn.LSTM(input_size=n_features, hidden_size=hidden_size, batch_first=True)
-        self.fc = nn.Linear(hidden_size, 1)
+        self.fc = nn.Linear(hidden_size, 2)
         self.softmax = nn.Softmax(dim=-1)  # Softmax for multi-class probabilities
 
     def forward(self, x):
